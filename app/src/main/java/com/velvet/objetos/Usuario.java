@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Usuario {
-    private String nombre, correo, palabraSegura, celular;
-    private Date fechaNacimiento;
-    private ArrayList<Interes> lstIntereses;
+    private String nombre, correo, palabraSegura, celular, edad;
+    private Interes intereses;
+    private ArrayList<Match> lstMatch;
 
-    public Usuario(String nombre, String correo, String celular, String clave, Date fechaNacimiento) {
-        this.lstIntereses = new ArrayList<Interes>();
+    public Usuario(String nombre, String correo, String celular, String clave, String edad) {
+        this.lstMatch = new ArrayList<Match>();
         this.nombre = nombre;
         this.correo = correo;
         this.celular = celular;
         this.palabraSegura = clave;
-        this.fechaNacimiento = fechaNacimiento;
+        this.edad = edad;
     }
 
 
@@ -42,20 +42,12 @@ public class Usuario {
         this.palabraSegura = palabraSegura;
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getEdad() {
+        return edad;
     }
 
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public ArrayList<Interes> getLstIntereses() {
-        return lstIntereses;
-    }
-
-    public void setLstIntereses(ArrayList<Interes> lstIntereses) {
-        this.lstIntereses = lstIntereses;
+    public void setEdad(String edad) {
+        this.edad = edad;
     }
 
     public String getCelular() {
@@ -64,5 +56,21 @@ public class Usuario {
 
     public void setCelular(String celular) {
         this.celular = celular;
+    }
+
+    public Interes getIntereses() {
+        return intereses;
+    }
+
+    public void setIntereses(Interes intereses) {
+        this.intereses = intereses;
+    }
+
+    public ArrayList<Match> getLstMatch() {
+        return lstMatch;
+    }
+
+    public void setLstMatch(ArrayList<Match> lstMatch) {
+        this.lstMatch = lstMatch;
     }
 }

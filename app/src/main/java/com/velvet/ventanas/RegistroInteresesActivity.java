@@ -1,29 +1,35 @@
 package com.velvet.ventanas;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.velvet.R;
+import com.velvet.objetos.Interes;
+import com.velvet.objetos.Usuario;
+import com.velvet.objetos.Utilidad;
 
 import java.util.List;
 
 
 public class RegistroInteresesActivity extends AppCompatActivity {
-    private TextView txtTituloInteres, txtGenero, txtP1, txtP2, txtP3;
+    private TextView tTituloInteres, tGenero, tP1, tP2, tP3;
     private Spinner spinnerP1, spinnerP2, spinnerP3;
-    private Button btnSiguiente;
-    private String peliculaFavorita, libroFavorito, generoFavorito, hobbieFavorito, musicaFavorita, planFavorito;
+
     private String opcionesP1[] = new String[3];
     private String opcionesP2[] = new String[3];
     private String opcionesP3[] = new String[3];
-    private int paginar = 1;
-    private boolean centinela = true;
+
+    private Usuario usuario;
+    private Utilidad utilidad;
+    private String peliculaFavorita, libroFavorito, generoFavorito, celularUsuario;
 
 
     @Override
@@ -34,6 +40,17 @@ public class RegistroInteresesActivity extends AppCompatActivity {
         spinnerP1 = (Spinner) findViewById(R.id.spinnerP1);
         spinnerP2 = (Spinner) findViewById(R.id.spinnerP2);
         spinnerP3 = (Spinner) findViewById(R.id.spinnerP3);
+
+        tTituloInteres = (TextView) findViewById(R.id.txtTituloIntereses);
+        tGenero = (TextView) findViewById(R.id.txtGenero);
+        tP1 = (TextView) findViewById(R.id.txtP1);
+        tP2 = (TextView) findViewById(R.id.txtP2);
+        tP3 = (TextView) findViewById(R.id.txtP3);
+
+        celularUsuario = getIntent().getStringExtra("usuario");
+        usuario = utilidad.buscarUsuario(celularUsuario);
+        System.out.println(usuario.getNombre());
+
 
         opcionesP1 = new String[]{"Terror", "Accion", "Ciencia Ficcion", "Romantico"};
         ArrayAdapter<String> adapterP1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opcionesP1);
@@ -54,29 +71,11 @@ public class RegistroInteresesActivity extends AppCompatActivity {
     }
 
     public void onSiguiente(View view) {
-        paginar++;
-        if (paginar == 2) {
-            txtGenero.setText("Sigamos con estos");
-            txtP1.setText("Deporte favorito");
-            opcionesP1 = new String[]{"Futbol", "Baloncesto", "Natacion", "Atletismo"};
-            ArrayAdapter<String> adapterP1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opcionesP1);
-            spinnerP1.setAdapter(adapterP1);
-
-            txtP1.setText("Hobbie favorito");
-            opcionesP2 = new String[]{"Estudiar", "Gym", "Cantar", "Bailar"};
-            ArrayAdapter<String> adapterP2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opcionesP2);
-            spinnerP2.setAdapter(adapterP2);
-
-            txtP1.setText("Plan favorito");
-            opcionesP3 = new String[]{"Netflix and chill", "Cine", "Rumba", "Comer"};
-            ArrayAdapter<String> adapterP3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opcionesP3);
-            spinnerP3.setAdapter(adapterP3);
-        } else if (paginar == 3) {
-            spinnerP1.setEnabled(false);
-            spinnerP2.setEnabled(false);
-            spinnerP3.setEnabled(false);
-            btnSiguiente.setText("Siguiente");
-        }
+        Toast.makeText(this, "Registrado con exito", Toast.LENGTH_LONG).show();
+        Interes interes = new Interes(peliculaFavorita, libroFavorito, generoFavorito);
+        Intent intent = new Intent(this, PerfilActivity.class);
+        intent.putExtra("usuario", usuario.getCelular());
+        startActivity(intent);
     }
 
 }

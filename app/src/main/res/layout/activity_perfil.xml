@@ -6,19 +6,84 @@
     android:layout_height="match_parent"
     tools:context=".ventanas.PerfilActivity">
 
-    <ImageView
-        android:id="@+id/imgMatch"
-        android:layout_width="304dp"
-        android:layout_height="279dp"
-        android:layout_marginTop="172dp"
+    <TextView
+        android:id="@+id/tInstrucciones"
+        android:layout_width="350dp"
+        android:layout_height="15dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/tInstrucciones"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/tLibroFavorito" />
+
+    <TextView
+        android:id="@+id/tMostarGenero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="165dp"
+        android:layout_marginRight="165dp"
+        android:text="@string/tMostrarGenero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tMatch" />
+
+    <TextView
+        android:id="@+id/tMostarPelicula"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="165dp"
+        android:layout_marginRight="165dp"
+        android:text="@string/tMostrarPelicula"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tMostarGenero" />
+
+    <TextView
+        android:id="@+id/tMostrarLibro"
+        android:layout_width="59dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="165dp"
+        android:layout_marginRight="165dp"
+        android:text="@string/tMostraLibro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tMostarPelicula" />
+
+    <TextView
+        android:id="@+id/tLibroFavorito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/tLibroFavorito"
+        app:layout_constraintEnd_toStartOf="@+id/tMostrarLibro"
+        app:layout_constraintHorizontal_bias="0.59"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tPeliculaFavorita" />
+
+    <TextView
+        android:id="@+id/tGeneroFavortio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/tGeneroFavorito"
+        app:layout_constraintEnd_toStartOf="@+id/tMostarGenero"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tMatch" />
+
+    <TextView
+        android:id="@+id/tPeliculaFavorita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/tPeliculaFavorita"
+        app:layout_constraintEnd_toStartOf="@+id/tMostarPelicula"
+        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tGeneroFavortio" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnPerfil"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:onClick="onPerfil"
@@ -27,17 +92,17 @@
         app:srcCompat="@mipmap/perfil" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btnMatch"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:onClick="onMatch"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton3"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintEnd_toStartOf="@+id/btnMensajes"
+        app:layout_constraintStart_toEndOf="@+id/btnPerfil"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/match" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/btnMensajes"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:onClick="onMensaje"
@@ -46,27 +111,38 @@
         app:srcCompat="@mipmap/mensajes" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btnSiMatch"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="52dp"
         android:layout_marginLeft="52dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:onClick="onNoMatch"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgMatch"
+        app:layout_constraintTop_toBottomOf="@+id/tInstrucciones"
         app:srcCompat="@mipmap/nomatch" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/btnNoMatch"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
         android:onClick="onSiMatch"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgMatch"
+        app:layout_constraintTop_toBottomOf="@+id/tInstrucciones"
         app:srcCompat="@mipmap/matchsi" />
+
+    <TextView
+        android:id="@+id/tMatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="@string/tMatch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.velvet.R;
 import com.velvet.objetos.Usuario;
+import com.velvet.objetos.Utilidad;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,14 +21,17 @@ import java.util.Date;
 public class RegistroActivity extends AppCompatActivity {
     private EditText txtNombre, txtCorreo, txtCelular, txtFechaNacimiento, txtClave;
     private TextView tNombre, tCorreo, tCelular, tFechaNacimiento, tClave;
-    private String nombre, correo, celular, clave, fechaN;
-    private Date fechaNacimiento;
+
+    private Utilidad utilidad;
     private Usuario usuario;
+    private String nombre, correo, celular, clave, fechaNacimiento;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+
+        Intent intent = new Intent(this, RegistroInteresesActivity.class);
 
         txtNombre = (EditText) findViewById(R.id.txtNombre);
         txtCorreo = (EditText) findViewById(R.id.txtCorreo);
@@ -47,23 +51,17 @@ public class RegistroActivity extends AppCompatActivity {
         nombre = txtNombre.getText().toString();
         correo = txtCorreo.getText().toString();
         celular = txtCelular.getText().toString();
-        fechaN = txtFechaNacimiento.getText().toString();
+        fechaNacimiento = txtFechaNacimiento.getText().toString();
         clave = txtClave.getText().toString();
-        System.out.println( "fecha "+fechaN);
-        /**
-         try {
-         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-         Date fecha = formato.parse(fechaN);
-         fechaNacimiento = fecha;
-         } catch (ParseException e) {
-         e.printStackTrace();
-         }
-         */
 
         if (!nombre.equals("") && !correo.equals("") && !celular.equals("") && !fechaNacimiento.equals("") && !clave.equals("")) {
             usuario = new Usuario(nombre, correo, celular, clave, fechaNacimiento);
+            utilidad.guardarUsuario(usuario);
+
+            Toast.makeText(this, "Usuario registrado", Toast.LENGTH_LONG).show();
+
             Intent intent = new Intent(this, RegistroInteresesActivity.class);
-            intent.putExtra("usuario", (Parcelable) usuario);
+            intent.putExtra("usuario", celular);
             startActivity(intent);
 
         } else {

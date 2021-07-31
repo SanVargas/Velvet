@@ -13,6 +13,18 @@
     <string name="txtCorreo">Ingrese su correo</string>
     <string name="txtCelular">Ingrese su celular</string>
     <string name="txtClave">Ingrese su clave</string>
-    <string name="txtFechaNacimiento">Ingrese su fecha de nacimiento</string>
+    <string name="txtFechaNacimiento">Ingrese su edad</string>
     <string name="btnRegistrar">Registrarse</string>
+
+    <string name="tMatch">Los intereses de tu futuro amigo.</string>
+    <string name="tGeneroFavorito">Su genero favorito:</string>
+    <string name="tPeliculaFavorita">Su pelicula favorita:</string>
+    <string name="tLibroFavorito">Su libro favorito</string>
+    <string name="tMostrarGenero"> </string>
+    <string name="tMostrarPelicula"> </string>
+    <string name="tMostraLibro"> </string>
+    <string name="tInstrucciones">Dale al rojo si no te interesa - Dale al verde si te interesa</string>
+
+    <string name="tMensajes">Estos son tus amigos</string>
+
 </resources>

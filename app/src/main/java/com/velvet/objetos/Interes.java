@@ -1,15 +1,12 @@
 package com.velvet.objetos;
 
 public class Interes {
-    String peliculaFavorita, libroFavorito, generoFavorito, hobbieFavorito, musicaFavorita, planFavorito;
+    String peliculaFavorita, libroFavorito, generoFavorito;
 
-    public void Interes(String peliculaFavorita, String libroFavorito, String generoFavorito, String hobbieFavorito, String musicaFavorita, String planFavorito) {
+    public Interes(String peliculaFavorita, String libroFavorito, String generoFavorito) {
         this.peliculaFavorita = peliculaFavorita;
         this.libroFavorito = libroFavorito;
         this.generoFavorito = generoFavorito;
-        this.hobbieFavorito = hobbieFavorito;
-        this.musicaFavorita = musicaFavorita;
-        this.planFavorito = planFavorito;
     }
 
     public String getPeliculaFavorita() {
@@ -36,27 +33,4 @@ public class Interes {
         this.generoFavorito = generoFavorito;
     }
 
-    public String getHobbieFavorito() {
-        return hobbieFavorito;
-    }
-
-    public void setHobbieFavorito(String hobbieFavorito) {
-        this.hobbieFavorito = hobbieFavorito;
-    }
-
-    public String getMusicaFavorita() {
-        return musicaFavorita;
-    }
-
-    public void setMusicaFavorita(String musicaFavorita) {
-        this.musicaFavorita = musicaFavorita;
-    }
-
-    public String getPlanFavorito() {
-        return planFavorito;
-    }
-
-    public void setPlanFavorito(String planFavorito) {
-        this.planFavorito = planFavorito;
-    }
 }
