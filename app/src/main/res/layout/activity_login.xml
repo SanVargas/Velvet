@@ -114,24 +114,25 @@
 
                         <Button
                             android:id="@+id/btnIngresar"
-                            android:background="@android:color/transparent"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/button_margin"
+                            android:background="@android:color/transparent"
                             android:onClick="OnClickLogin"
-                            android:textColor="@color/purple_200"
                             android:text="Ingresar"
-                            android:textSize="20sp"/>
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
                         <TextView
                             android:id="@+id/btnRegistrarme"
-                            android:background="@android:color/transparent"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/button_margin"
+                            android:background="@android:color/transparent"
                             android:clickable="true"
                             android:onClick="OnClickRegistrarme"
                             android:text="¡Deseo registrarme!"
-                            android:textColor="@color/purple_200"/>
+                            android:textColor="@color/black" />
 
                     </LinearLayout>
                 </LinearLayout>

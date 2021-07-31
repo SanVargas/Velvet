@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">VelvetApp</string>
+    <string name="title_activity_registro_intereses">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="txtTituloIntereses">Cuentanos tus intereses</string>
+    <string name="txtGenero">Empecemos con Arte</string>
+    <string name="txtP1">Genero favorito</string>
+    <string name="txtP2">Pelicula favorito</string>
+    <string name="txtP3">Libro favorito</string>
+    <string name="btnSiguiente">Siguiente</string>
+
+    <string name="txtNombre">Ingrese su nombre</string>
+    <string name="txtCorreo">Ingrese su correo</string>
+    <string name="txtCelular">Ingrese su celular</string>
+    <string name="txtClave">Ingrese su clave</string>
+    <string name="txtFechaNacimiento">Ingrese su fecha de nacimiento</string>
+    <string name="btnRegistrar">Registrarse</string>
 </resources>
