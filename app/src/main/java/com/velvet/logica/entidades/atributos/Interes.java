@@ -1,7 +1,12 @@
-package com.velvet.objetos;
+package com.velvet.logica.entidades.atributos;
 
-public class Interes {
-    String peliculaFavorita, libroFavorito, generoFavorito;
+import java.io.Serializable;
+
+public class Interes implements Serializable {
+
+    private String peliculaFavorita;
+    private String libroFavorito;
+    private String generoFavorito;
 
     public Interes(String peliculaFavorita, String libroFavorito, String generoFavorito) {
         this.peliculaFavorita = peliculaFavorita;
@@ -32,5 +37,4 @@ public class Interes {
     public void setGeneroFavorito(String generoFavorito) {
         this.generoFavorito = generoFavorito;
     }
-
 }

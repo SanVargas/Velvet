@@ -14,6 +14,11 @@
     <string name="txtCelular">Ingrese su celular</string>
     <string name="txtClave">Ingrese su clave</string>
     <string name="txtFechaNacimiento">Ingrese su edad</string>
+    <string name="txtCedula">Ingrese su cedula</string>
+    <string name="txtCiudad">Ingrese su ciudad</string>
+    <string name="txtOrientacion">Ingrese su orientacion</string>
+    <string name="txtGeneroSexual">Ingrese su genero</string>
+    <string name="txtSexo">Ingrese su sexo</string>
     <string name="btnRegistrar">Registrarse</string>
 
     <string name="tMatch">Los intereses de tu futuro amigo.</string>

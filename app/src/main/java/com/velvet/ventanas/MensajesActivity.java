@@ -8,9 +8,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.velvet.R;
-import com.velvet.objetos.Match;
-import com.velvet.objetos.Usuario;
-import com.velvet.objetos.Utilidad;
+import com.velvet.logica.Velvet;
+import com.velvet.logica.citas.Match;
+import com.velvet.logica.entidades.Usuario;
 
 import java.util.ArrayList;
 
@@ -20,7 +20,7 @@ public class MensajesActivity extends AppCompatActivity {
     private ListView lstAmigos;
 
     private Usuario usuario;
-    private Utilidad utilidad;
+    private Velvet vel;
     private ArrayList<Match> lstMatch;
     private String[] amigosNombres;
     private String[] amigosEdades;
@@ -37,15 +37,12 @@ public class MensajesActivity extends AppCompatActivity {
         lstAmigos = (ListView) findViewById(R.id.lstAmigos);
 
         celularUsuario = getIntent().getStringExtra("usuario");
-        usuario = utilidad.buscarUsuario(celularUsuario);
 
-        lstMatch = usuario.getLstMatch();
         amigosNombres = new String[lstMatch.size()];
         amigosEdades = new String[lstMatch.size()];
 
         for (int i = 0; i < amigosNombres.length; i++) {
-            amigosNombres[i] = lstMatch.get(i).getNombre();
-            amigosEdades[i] = lstMatch.get(i).getEdad();
+
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, amigosNombres);

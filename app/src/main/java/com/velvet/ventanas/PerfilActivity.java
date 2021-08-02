@@ -9,10 +9,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.velvet.R;
-import com.velvet.objetos.Interes;
-import com.velvet.objetos.Match;
-import com.velvet.objetos.Usuario;
-import com.velvet.objetos.Utilidad;
+import com.velvet.logica.Velvet;
+import com.velvet.logica.citas.Match;
+import com.velvet.logica.entidades.Usuario;
+import com.velvet.logica.entidades.atributos.Interes;
 
 import java.util.ArrayList;
 
@@ -21,9 +21,10 @@ public class PerfilActivity extends AppCompatActivity {
 
     private Usuario usuario;
     private Match match;
-    private Utilidad utilidad;
+    private Velvet velvet;
     private Interes interes;
-    private String celularUsuario, nombreMatch, edadMatch;
+    private int edadMatch;
+    private String nombreMatch,celularUsuario;
     private ArrayList<Usuario> lstUsuarios;
     private boolean centinel = true;
     private boolean hilo;
@@ -46,9 +47,9 @@ public class PerfilActivity extends AppCompatActivity {
         tMostrarLibro = (TextView) findViewById(R.id.tMostrarLibro);
 
         celularUsuario = getIntent().getStringExtra("usuario");
-        usuario = utilidad.buscarUsuario(celularUsuario);
+        usuario = velvet.buscarUs(celularUsuario);
 
-        lstUsuarios = utilidad.getLstUsuarios();
+        lstUsuarios = velvet.getLstUsuario();
         for (Usuario usuarioMatch : lstUsuarios) {
             nombreMatch = usuarioMatch.getNombre();
             edadMatch = usuarioMatch.getEdad();
@@ -72,7 +73,7 @@ public class PerfilActivity extends AppCompatActivity {
 
     public void onMensaje(View view) {
         Intent intent = new Intent(this, MensajesActivity.class);
-        intent.putExtra("usuario", usuario.getCelular());
+        intent.putExtra("usuario", usuario);
         startActivity(intent);
     }
 
@@ -82,8 +83,6 @@ public class PerfilActivity extends AppCompatActivity {
 
     public void onSiMatch(View view) {
         Toast.makeText(this, "Nuevo amigo", Toast.LENGTH_LONG).show();
-        match = new Match(nombreMatch, edadMatch);
-        usuario.getLstMatch().add(match);
         centinel = false;
         contador++;
     }

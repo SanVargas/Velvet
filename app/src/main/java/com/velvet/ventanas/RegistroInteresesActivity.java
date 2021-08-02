@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,9 +11,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.velvet.R;
-import com.velvet.objetos.Interes;
-import com.velvet.objetos.Usuario;
-import com.velvet.objetos.Utilidad;
+import com.velvet.logica.Velvet;
+import com.velvet.logica.entidades.Usuario;
+import com.velvet.logica.entidades.atributos.Interes;
 
 import java.util.List;
 
@@ -27,8 +26,8 @@ public class RegistroInteresesActivity extends AppCompatActivity {
     private String opcionesP2[] = new String[3];
     private String opcionesP3[] = new String[3];
 
-    private Usuario usuario;
-    private Utilidad utilidad;
+    private Usuario us;
+    private Velvet velvet;
     private String peliculaFavorita, libroFavorito, generoFavorito, celularUsuario;
 
 
@@ -36,6 +35,16 @@ public class RegistroInteresesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_intereses);
+
+        Bundle vell = getIntent().getExtras();
+        if(vell!=null)
+        {
+            velvet = (Velvet) vell.getSerializable("velvet");
+            us = (Usuario) vell.getSerializable("user");
+        }else
+        {
+            velvet = new Velvet(this);
+        }
 
         spinnerP1 = (Spinner) findViewById(R.id.spinnerP1);
         spinnerP2 = (Spinner) findViewById(R.id.spinnerP2);
@@ -46,11 +55,6 @@ public class RegistroInteresesActivity extends AppCompatActivity {
         tP1 = (TextView) findViewById(R.id.txtP1);
         tP2 = (TextView) findViewById(R.id.txtP2);
         tP3 = (TextView) findViewById(R.id.txtP3);
-
-        celularUsuario = getIntent().getStringExtra("usuario");
-        usuario = utilidad.buscarUsuario(celularUsuario);
-        System.out.println(usuario.getNombre());
-
 
         opcionesP1 = new String[]{"Terror", "Accion", "Ciencia Ficcion", "Romantico"};
         ArrayAdapter<String> adapterP1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opcionesP1);
@@ -73,8 +77,13 @@ public class RegistroInteresesActivity extends AppCompatActivity {
     public void onSiguiente(View view) {
         Toast.makeText(this, "Registrado con exito", Toast.LENGTH_LONG).show();
         Interes interes = new Interes(peliculaFavorita, libroFavorito, generoFavorito);
+        us.setIntereses(interes);
+        velvet.insertarUsuario(us);
         Intent intent = new Intent(this, PerfilActivity.class);
-        intent.putExtra("usuario", usuario.getCelular());
+        Bundle b = new Bundle();
+        b.putSerializable("velvet", velvet);
+        b.putSerializable("usuario", us);
+        intent.putExtras(b);
         startActivity(intent);
     }
 

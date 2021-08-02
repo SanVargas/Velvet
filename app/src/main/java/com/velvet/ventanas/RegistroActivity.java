@@ -11,61 +11,97 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.velvet.R;
-import com.velvet.objetos.Usuario;
-import com.velvet.objetos.Utilidad;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.velvet.logica.Velvet;
+import com.velvet.logica.entidades.Usuario;
 
 public class RegistroActivity extends AppCompatActivity {
-    private EditText txtNombre, txtCorreo, txtCelular, txtFechaNacimiento, txtClave;
-    private TextView tNombre, tCorreo, tCelular, tFechaNacimiento, tClave;
+    private EditText txtNombre;
+    private EditText txtCorreo;
+    private EditText txtCelular;
+    private EditText txtCedula;
+    private EditText txtEdad;
+    private EditText txtClave;
+    private EditText txtCiudad;
+    private EditText txtOrientacion;
+    private EditText txtGeneroSexual;
+    private EditText txtSexo;
 
-    private Utilidad utilidad;
-    private Usuario usuario;
-    private String nombre, correo, celular, clave, fechaNacimiento;
+
+    private TextView tNombre, tCorreo, tCelular, tEdad, tClave, tCedula, tGeneroSexual, tOrientacion, tSexo, tCiudad;
+
+    private String nombre, correo, celular, clave, ciudad, orientacion, genero, sexo, codigo;
+    private int edad;
+    private Velvet vel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
+        Bundle vell = getIntent().getExtras();
+        if (vell != null) {
+            vel = (Velvet) vell.getSerializable("vel");
+        } else {
+            vel = new Velvet(this);
+        }
+
         Intent intent = new Intent(this, RegistroInteresesActivity.class);
 
         txtNombre = (EditText) findViewById(R.id.txtNombre);
         txtCorreo = (EditText) findViewById(R.id.txtCorreo);
         txtCelular = (EditText) findViewById(R.id.txtCelular);
-        txtFechaNacimiento = (EditText) findViewById(R.id.txtFechaNacimiento);
+        txtEdad = (EditText) findViewById(R.id.txtEdad);
         txtClave = (EditText) findViewById(R.id.txtClave);
+        txtCedula = (EditText) findViewById(R.id.txtCedula);
+        txtGeneroSexual = (EditText) findViewById(R.id.txtGeneroSexual);
+        txtOrientacion = (EditText) findViewById(R.id.txtOrientacion);
+        txtCiudad = (EditText) findViewById(R.id.txtCiudad);
+        txtSexo = (EditText) findViewById(R.id.txtSexo);
 
         tNombre = (TextView) findViewById(R.id.tNombre);
         tCorreo = (TextView) findViewById(R.id.tCorreo);
         tCelular = (TextView) findViewById(R.id.tCelular);
-        tFechaNacimiento = (TextView) findViewById(R.id.tFechaNacimiento);
+        tEdad = (TextView) findViewById(R.id.tEdad);
         tClave = (TextView) findViewById(R.id.tClave);
+        tCedula = (TextView) findViewById(R.id.tCedula);
+        tOrientacion = (TextView) findViewById(R.id.tOrientacion);
+        tSexo = (TextView) findViewById(R.id.tSexo);
+        tGeneroSexual = (TextView) findViewById(R.id.tGeroSexual);
+        tCiudad = (TextView) findViewById(R.id.tCiudad);
     }
 
     public void onRegistrar(View v) {
+
         Toast.makeText(this, "Validando datos...", Toast.LENGTH_LONG).show();
-        nombre = txtNombre.getText().toString();
-        correo = txtCorreo.getText().toString();
-        celular = txtCelular.getText().toString();
-        fechaNacimiento = txtFechaNacimiento.getText().toString();
-        clave = txtClave.getText().toString();
 
-        if (!nombre.equals("") && !correo.equals("") && !celular.equals("") && !fechaNacimiento.equals("") && !clave.equals("")) {
-            usuario = new Usuario(nombre, correo, celular, clave, fechaNacimiento);
-            utilidad.guardarUsuario(usuario);
+        try {
+            nombre = txtNombre.getText().toString();
+            correo = txtCorreo.getText().toString();
+            celular = txtCelular.getText().toString();
+            ciudad = txtCiudad.getText().toString();
+            orientacion = txtOrientacion.getText().toString();
+            genero = txtGeneroSexual.getText().toString();
+            sexo = txtSexo.getText().toString();
+            edad = Integer.parseInt(txtEdad.getText().toString());
+            clave = txtClave.getText().toString();
+            codigo = txtCedula.getText().toString();
 
-            Toast.makeText(this, "Usuario registrado", Toast.LENGTH_LONG).show();
+            if (!nombre.equals("") && !correo.equals("") && !celular.equals("") && edad != 0 && !clave.equals("")) {
+                Usuario us = new Usuario(nombre, celular, edad, ciudad, orientacion, genero, sexo, correo, clave);
+                Toast.makeText(this, "!BRUTAL!, SIGAMOS CON EL REGISTRO :)", Toast.LENGTH_LONG).show();
 
-            Intent intent = new Intent(this, RegistroInteresesActivity.class);
-            intent.putExtra("usuario", celular);
-            startActivity(intent);
+                Intent intent = new Intent(this, RegistroInteresesActivity.class);
+                intent.putExtra("velvet", vel);
+                intent.putExtra("user", us);
+                startActivity(intent);
 
-        } else {
-            Toast.makeText(this, "Complete todos los campos", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "DATOS INCOMPLETOS", Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
         }
+
+
     }
 }
