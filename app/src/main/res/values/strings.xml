@@ -1,26 +1,51 @@
 <resources>
-    <string name="app_name">VelvetApp</string>
-    <string name="title_activity_registro_intereses">MainActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="txtTituloIntereses">Cuentanos tus intereses</string>
-    <string name="txtGenero">Empecemos con Arte</string>
-    <string name="txtP1">Genero favorito</string>
-    <string name="txtP2">Pelicula favorito</string>
-    <string name="txtP3">Libro favorito</string>
-    <string name="btnSiguiente">Siguiente</string>
+    <string name="Velvet_App">Velvet-1.0</string>
 
-    <string name="txtNombre">Ingrese su nombre</string>
-    <string name="txtCorreo">Ingrese su correo</string>
-    <string name="txtCelular">Ingrese su celular</string>
-    <string name="txtClave">Ingrese su clave</string>
-    <string name="txtFechaNacimiento">Ingrese su edad</string>
-    <string name="txtCedula">Ingrese su cedula</string>
-    <string name="txtCiudad">Ingrese su ciudad</string>
-    <string name="txtOrientacion">Ingrese su orientacion</string>
-    <string name="txtGeneroSexual">Ingrese su genero</string>
-    <string name="txtSexo">Ingrese su sexo</string>
-    <string name="btnRegistrar">Registrarse</string>
+    //VENTANA LOGIN
+    <string name="tUsuarioIngreso">Ingresa su correo</string>
+    <string name="tClaveIngreso">Ingresa su clave</string>
+    <string name="txtUsuarioIngreso"> </string>
+    <string name="txtClaveIngreso"> </string>
+    <string name="btnIngresar">Ingresar</string>
+    <string name="btnRegistrar">Registrar</string>
+    //FIN
 
+    //VENTANA REGISTRO
+    <string name="tNombre">Ingrese su nombre</string>
+    <string name="tCorreo">Ingrese su correo</string>
+    <string name="tCelular">Ingrese su celular</string>
+    <string name="tClave">Ingrese su clave</string>
+    <string name="tEdad">Ingrese su edad</string>
+    <string name="tCedula">Ingrese su cedula</string>
+    <string name="tCiudad">Ingrese su ciudad</string>
+    <string name="tOrientacion">Ingrese su orientacion</string>
+    <string name="tGeneroSexual">Ingrese su genero</string>
+    <string name="tSexo">Ingrese su sexo</string>
+    <string name="txtNombre" />
+    <string name="txtCorreo" />
+    <string name="txtCelular" />
+    <string name="txtClave" />
+    <string name="txtEdad" />
+    <string name="txtCedula" />
+    <string name="txtCiudad" />
+    <string name="txtOrientacion" />
+    <string name="txtGeneroSexual" />
+    <string name="txtSexo" />
+    <string name="btnRegistrarInformacion">Registrarse</string>
+    <string name="btnCancelarRegistro">Cancelar</string>
+    //FIN
+
+    //VENTANA REGISTRO INTERESES
+    <string name="tTituloIntereses">Cuentanos tus intereses</string>
+    <string name="tTituloPregunta">Empecemos con estos</string>
+    <string name="tPregunta1">Genero favorito</string>
+    <string name="ttPregunta2">Pelicula favorito</string>
+    <string name="tPregunta3">Libro favorito</string>
+    <string name="btnSiguienteIntereses">Siguiente</string>
+    <string name="btnCancelarIntereses">Cancelar</string>
+    //FIN
+
+    //VENTANA PERFIL
     <string name="tMatch">Los intereses de tu futuro amigo.</string>
     <string name="tGeneroFavorito">Su genero favorito:</string>
     <string name="tPeliculaFavorita">Su pelicula favorita:</string>
@@ -28,8 +53,15 @@
     <string name="tMostrarGenero"> </string>
     <string name="tMostrarPelicula"> </string>
     <string name="tMostraLibro"> </string>
-    <string name="tInstrucciones">Dale al rojo si no te interesa - Dale al verde si te interesa</string>
+    <string name="btnMensajes" />
+    <string name="btnPerfil" />
+    <string name="btnSiMatch" />
+    <string name="btnNoMatch" />
+    <string name="btnSalir">Cerrar Sesion</string>
+    <string name="tInstrucciones">Rojo si no te interesa -Verde si te interesa</string>
+    //FIN
 
+    //VENTANA MENSAJE
     <string name="tMensajes">Estos son tus amigos</string>
-
+    //FIN
 </resources>

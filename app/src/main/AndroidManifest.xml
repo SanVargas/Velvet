@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.velvet">
+    package="com.app.velvet_10">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/Velvet_App"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.VelvetApp">
-
-        <activity android:name=".ventanas.LoginActivity">
+        android:theme="@style/Theme.Velvet10">
+        <activity android:name=".ventanas.MensajeActivity"></activity>
+        <activity android:name=".ventanas.RegistroInteresesActivity" />
+        <activity android:name=".ventanas.PerfilActivity" />
+        <activity android:name=".ventanas.RegistroActivity" />
+        <activity android:name=".ventanas.IngresoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ventanas.RegistroActivity" />
-        <activity android:name=".ventanas.RegistroInteresesActivity" />
-        <activity android:name=".ventanas.PerfilActivity" />
-        <activity android:name=".ventanas.MensajesActivity"/>
     </application>
 
 </manifest>

@@ -6,110 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".ventanas.RegistroActivity">
 
-    <Button
-        android:id="@+id/btnRegistrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="116dp"
-        android:onClick="onRegistrar"
-        android:text="@string/btnRegistrar"
-        android:textColor="#000000"
-        app:backgroundTint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.098"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtGeneroSexual" />
-
-    <EditText
-        android:id="@+id/txtClave"
-        android:layout_width="180dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="88dp"
-        android:layout_marginLeft="88dp"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/txtClave"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintStart_toEndOf="@+id/tClave"
-        app:layout_constraintTop_toBottomOf="@+id/txtEdad" />
-
-    <EditText
-        android:id="@+id/txtCorreo"
-        android:layout_width="180dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tCorreo"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombre"
-        android:autofillHints="" />
-
-    <EditText
-        android:id="@+id/txtNombre"
-        android:layout_width="180dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tNombre"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/txtCelular"
-        android:layout_width="180dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tCelular"
-        app:layout_constraintTop_toBottomOf="@+id/txtCorreo" />
-
-    <EditText
-        android:id="@+id/txtEdad"
-        android:layout_width="180dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.659"
-        app:layout_constraintStart_toEndOf="@+id/tEdad"
-        app:layout_constraintTop_toBottomOf="@+id/txtCelular" />
 
     <TextView
         android:id="@+id/tNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
         android:layout_marginTop="40dp"
-        android:text="@string/txtNombre"
+        android:text="@string/tNombre"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tCorreo"
+        android:id="@+id/tEdad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/txtCorreo"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/tEdad"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tNombre" />
+
+    <TextView
+        android:id="@+id/tCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/tCorreo"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tCedula" />
 
     <TextView
         android:id="@+id/tCelular"
@@ -117,155 +49,245 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/txtCelular"
+        android:layout_marginTop="28dp"
+        android:text="@string/tCelular"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tCorreo" />
 
     <TextView
-        android:id="@+id/tEdad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/txtFechaNacimiento"
+        android:id="@+id/tClave"
+        android:layout_width="114dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/tClave"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tCelular" />
 
     <TextView
-        android:id="@+id/tClave"
+        android:id="@+id/tCiudad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/txtClave"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tEdad" />
-
-    <TextView
-        android:id="@+id/tCedula"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/txtCedula"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/tCiudad"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tClave" />
 
     <TextView
+        android:id="@+id/tGeneroSexual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/tGeneroSexual"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tCiudad" />
+
+    <TextView
         android:id="@+id/tOrientacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="36dp"
-        android:shadowColor="#000000"
-        android:text="@string/txtOrientacion"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/tOrientacion"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tCedula" />
+        app:layout_constraintTop_toBottomOf="@+id/tGeneroSexual" />
 
     <TextView
         android:id="@+id/tSexo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/txtSexo"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/tSexo"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tOrientacion" />
 
-    <EditText
-        android:id="@+id/txtCedula"
-        android:layout_width="180dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/tCedula"
-        app:layout_constraintTop_toBottomOf="@+id/txtClave" />
-
-    <EditText
-        android:id="@+id/txtOrientacion"
-        android:layout_width="180dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/tOrientacion"
-        app:layout_constraintTop_toBottomOf="@+id/txtCedula" />
-
-    <EditText
-        android:id="@+id/txtSexo"
-        android:layout_width="180dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginLeft="92dp"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/tSexo"
-        app:layout_constraintTop_toBottomOf="@+id/txtOrientacion" />
-
     <TextView
-        android:id="@+id/tGeroSexual"
+        android:id="@+id/tCedula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
         android:layout_marginTop="40dp"
-        android:text="@string/txtGeneroSexual"
+        android:text="@string/tCedula"
         android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tEdad" />
+
+    <Button
+        android:id="@+id/btnRegistrarInformacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onClickRegistrarse"
+        android:text="@string/btnRegistrarInformacion"
+        android:textColor="#000000"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.669"
+        app:layout_constraintStart_toEndOf="@+id/btnCancelar"
+        app:layout_constraintTop_toBottomOf="@+id/txtSexo" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="32dp"
+        android:onClick="onClickCancelar"
+        android:text="@string/btnCancelarRegistro"
+        android:textColor="#000000"
+        app:backgroundTint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tSexo" />
 
     <EditText
-        android:id="@+id/txtGeneroSexual"
-        android:layout_width="180dp"
+        android:id="@+id/txtNombre"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/tGeroSexual"
-        app:layout_constraintTop_toBottomOf="@+id/txtSexo" />
+        android:text="@string/txtNombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tNombre"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tCiudad"
+    <EditText
+        android:id="@+id/txtEdad"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="52dp"
-        android:text="@string/txtCiudad"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tGeroSexual" />
+        android:layout_height="40dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/txtEdad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tEdad"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
+
+    <EditText
+        android:id="@+id/txtCedula"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/txtCedula"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tCedula"
+        app:layout_constraintTop_toBottomOf="@+id/txtEdad" />
+
+    <EditText
+        android:id="@+id/txtCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="@string/txtCorreo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tCorreo"
+        app:layout_constraintTop_toBottomOf="@+id/txtCedula" />
+
+    <EditText
+        android:id="@+id/txtCelular"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@string/txtCelular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tCelular"
+        app:layout_constraintTop_toBottomOf="@+id/txtCorreo" />
+
+    <EditText
+        android:id="@+id/txtClave"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="@string/txtClave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tCelular"
+        app:layout_constraintTop_toBottomOf="@+id/txtCelular" />
 
     <EditText
         android:id="@+id/txtCiudad"
-        android:layout_width="180dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/txtCiudad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tCiudad"
+        app:layout_constraintTop_toBottomOf="@+id/txtClave" />
+
+    <EditText
+        android:id="@+id/txtGeneroSexual"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:text="@string/txtGeneroSexual"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.892"
-        app:layout_constraintStart_toEndOf="@+id/tCiudad"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tGeneroSexual"
+        app:layout_constraintTop_toBottomOf="@+id/txtCiudad" />
+
+    <EditText
+        android:id="@+id/txtOrientacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/txtOrientacion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tOrientacion"
         app:layout_constraintTop_toBottomOf="@+id/txtGeneroSexual" />
 
+    <EditText
+        android:id="@+id/txtSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/txtNombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tSexo"
+        app:layout_constraintTop_toBottomOf="@+id/txtOrientacion" />
 </androidx.constraintlayout.widget.ConstraintLayout>

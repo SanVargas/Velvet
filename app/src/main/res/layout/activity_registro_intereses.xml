@@ -2,17 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ventanas.RegistroInteresesActivity">
-
     <TextView
-        android:id="@+id/txtP3"
+        android:id="@+id/tPregunta3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/txtP3"
+        android:text="@string/tPregunta3"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,20 +24,20 @@
         android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtP3" />
+        app:layout_constraintTop_toBottomOf="@+id/tPregunta3" />
 
     <TextView
-        android:id="@+id/txtP1"
+        android:id="@+id/tPregunta1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/txtP1"
+        android:text="@string/tPregunta1"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtGenero" />
+        app:layout_constraintTop_toBottomOf="@+id/tTituloPregunta" />
 
     <Spinner
         android:id="@+id/spinnerP1"
@@ -48,7 +46,7 @@
         android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtP1" />
+        app:layout_constraintTop_toBottomOf="@+id/tPregunta1" />
 
     <Spinner
         android:id="@+id/spinnerP2"
@@ -57,27 +55,27 @@
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtP2" />
+        app:layout_constraintTop_toBottomOf="@+id/tPregunta2" />
 
     <TextView
-        android:id="@+id/txtGenero"
+        android:id="@+id/tTituloPregunta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/txtGenero"
+        android:text="@string/tTituloPregunta"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTituloIntereses" />
+        app:layout_constraintTop_toBottomOf="@+id/tTituloIntereses" />
 
     <TextView
-        android:id="@+id/txtP2"
+        android:id="@+id/tPregunta2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="@string/txtP2"
+        android:text="@string/ttPregunta2"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,11 +84,11 @@
         app:layout_constraintTop_toBottomOf="@+id/spinnerP1" />
 
     <TextView
-        android:id="@+id/txtTituloIntereses"
+        android:id="@+id/tTituloIntereses"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="@string/txtTituloIntereses"
+        android:text="@string/tTituloIntereses"
         android:textColor="#000000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -102,12 +100,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:onClick="onSiguiente"
-        android:text="@string/btnSiguiente"
+        android:text="@string/btnSiguienteIntereses"
+        android:textColor="#000000"
+        app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnCancelarIntereses"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerP3"
+        app:layout_constraintVertical_bias="0.163" />
+
+    <Button
+        android:id="@+id/btnCancelarIntereses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:text="@string/btnCancelarIntereses"
+        android:textColor="#050505"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerP3"
-        app:layout_constraintVertical_bias="0.085" />
+        app:layout_constraintVertical_bias="0.405" />
 </androidx.constraintlayout.widget.ConstraintLayout>
